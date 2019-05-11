@@ -11,6 +11,7 @@ const reload = browserSync.reload;
 const runSequence = require('run-sequence').use(gulp);
 
 
+
 var paths = {
     //scripts: ['./dev/assets/scripts/common.js'],
     appstyles: 'scss/app/**/*.scss',
