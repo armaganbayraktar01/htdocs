@@ -11,12 +11,11 @@ const reload = browserSync.reload;
 const runSequence = require('run-sequence').use(gulp);
 
 
-
 var paths = {
     //scripts: ['./dev/assets/scripts/common.js'],
-    appstyles: 'scss/app/**/*.scss',
+    appstyles: 'cms/public/udemy-v1/sass/*.scss',
     appdest: 'cms/public/udemy-v1/styles',
-    adminstyles: 'scss/admin/*.scss',
+    adminstyles: 'cms/admin/public/sass/*.scss',
     admindest: 'cms/admin/public/styles',
    // html: './dist/*.html',
 };
@@ -26,7 +25,7 @@ gulp.task('browser-sync', () => {
         proxy: 'localhost/cms',
         //proxy: '127.0.0.1',
         //port: 3000,
-        open: false,
+        open: true,
         notify: true
     });
 });
@@ -61,8 +60,8 @@ gulp.task('admincss', () => {
 });
 
 gulp.task('watch', () => {
-    gulp.watch("scss/app/**/*.scss", ['css']), reload;
-    gulp.watch("scss/admin/**/*.scss", ['admincss']), reload;
+    gulp.watch("cms/public/udemy-v1/sass/*.scss", ['css']), reload;
+    gulp.watch("cms/admin/public/sass/*.scss", ['admincss']), reload;
     //gulp.watch("src/js/**/*.js", ['js']);
     //gulp.watch("src/img/**/*", ['img']);
     //gulp.watch("cms/**/*.html", ['html']);
